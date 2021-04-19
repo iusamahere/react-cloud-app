@@ -35,10 +35,10 @@ jobs:
           cmd: install
           
       - name: Build React App
-        run: yarn build
+        run: npm build
         
       - name: Install Surge
         run: npm install --global surge
         
       - name: Deploy to Surge
-        run: surge ./ basic-react-cloud.surge.sh --token  ${{ secrets.SURGE_TOKEN }}
+        run: surge ./build basic-react-cloud.surge.sh --token  ${{ secrets.SURGE_TOKEN }}
